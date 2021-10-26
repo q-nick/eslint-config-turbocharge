@@ -1,1 +1,1 @@
-# ultimate-eslint-typescript-config
+# ESlint plugin - Ultimate Typescript Config
