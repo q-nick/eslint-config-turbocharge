@@ -82,6 +82,9 @@ const crossPlatformRules = {
   "sort-keys": "off",
   "quote-props": ["error", "as-needed"],
   "@typescript-eslint/no-type-alias": ["error", { "allowAliases": "in-unions" }],
+
+  "multiline-comment-style": "off",
+  "capitalized-comments": "off"
 }
 
 const tsHeavyRulesOff = {
@@ -135,8 +138,9 @@ module.exports = {
         "@typescript-eslint",
         "react",
         "react-hooks",
+        "testing-library",
         "jsx-a11y",
-        "ultimate-typescript-config",
+        "import",
       ],
       extends: [
         "eslint:all",
@@ -144,10 +148,17 @@ module.exports = {
         "plugin:react/all",
         "plugin:react/jsx-runtime",
         "plugin:react-hooks/recommended",
-        "plugin:jsx-a11y/recommended"
+        "plugin:testing-library/react",
+        "plugin:jsx-a11y/recommended",
+        "plugin:import/recommended",
+        "plugin:import/typescript",
       ],
       "parser": "@typescript-eslint/parser",
-      // "parserOptions": { "project": ["tsconfig.json"] },
+      "parserOptions": {
+        "ecmaFeatures": {
+          "jsx": true
+        }
+      },
       rules: {
         ...tsHeavyRulesOff,
         ...crossPlatformRules,
@@ -160,14 +171,17 @@ module.exports = {
       },
       plugins: [
         "@typescript-eslint",
-        "ultimate-typescript-config",
+        "node",
+        "import",
       ],
       extends: [
         "eslint:all",
+        "plugin:node/recommended",
+        "plugin:import/recommended",
+        "plugin:import/typescript",
         "plugin:@typescript-eslint/all",
       ],
       "parser": "@typescript-eslint/parser",
-      // "parserOptions": { "project": ["tsconfig.json"] },
       rules: {
         ...tsHeavyRulesOff,
         ...crossPlatformRules,
