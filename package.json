@@ -1,5 +1,5 @@
 {
-  "name": "ultimate-eslint-typescript-config",
+  "name": "eslint-plugin-ultimate-typescript-config",
   "version": "0.0.1",
   "description": "Ultimate Eslint Typescript Config",
   "main": "index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/q-nick/ultimate-eslint-typescript-config.git"
+    "url": "git+https://github.com/q-nick/eslint-plugin-ultimate-typescript-config.git"
   },
   "keywords": [
     "eslint",
@@ -21,9 +21,9 @@
   "author": "Paweł Stefański",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/q-nick/ultimate-eslint-typescript-config/issues"
+    "url": "https://github.com/q-nick/eslint-plugin-ultimate-typescript-config/issues"
   },
-  "homepage": "https://github.com/q-nick/ultimate-eslint-typescript-config#readme",
+  "homepage": "https://github.com/q-nick/eslint-plugin-ultimate-typescript-config#readme",
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.2.0",
     "@typescript-eslint/parser": "^5.2.0",

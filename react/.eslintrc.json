@@ -3,13 +3,15 @@
   "extends": [
     "eslint:all",
     "plugin:@typescript-eslint/all",
-    "plugin:react/all"
+    "plugin:react/all",
+    "plugin:react-hooks/all"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": { "project": ["react/tsconfig.json"] },
   "plugins": [
     "@typescript-eslint",
-    "react"
+    "react",
+    "react-hooks"
   ],
   "rules": {
     "padded-blocks": ["error", "never"],
