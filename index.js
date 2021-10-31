@@ -80,6 +80,33 @@ const reactRules = {
   "react-hooks/exhaustive-deps": "error",
 }
 
+const nodeJSRules = {
+  "node/no-unsupported-features/es-syntax": ["error", {
+    "version": ">=14.0.0",
+    "ignores": ["modules"]
+  }],
+  "node/no-missing-import": ["error", {
+    "tryExtensions": [".ts", ".d.ts", ".json", ".node"]
+  }],
+  "node/no-unpublished-import": ["error", {
+    "tryExtensions": [".ts", ".d.ts"]
+  }],
+  "@typescript-eslint/naming-convention": "off",
+  "max-statements": ["error", 15],
+  "import/no-namespace": "off",
+  "@typescript-eslint/no-magic-numbers": "off",
+  "import/max-dependencies": ["error", {
+    "max": 15,
+    "ignoreTypeImports": false
+  }],
+  "no-implicit-coercion": "off",
+  "import/no-nodejs-modules": "off",
+  "array-element-newline": ["error", "consistent"],
+  "import/unambiguous": "off",
+  "arrow-body-style": "off",
+  "max-lines-per-function": ["error", 200]
+}
+
 const crossPlatformRules = {
   "padded-blocks": ["error", "never"],
   "one-var": ["error", "never"],
@@ -201,14 +228,14 @@ module.exports = {
         ...reactRules,
       },
       settings: {
-        'import/extensions': ['.ts', '.tsx'],
+        'import/extensions': [".ts", ".d.ts", '.tsx'],
         'import/external-module-folders': ['node_modules', 'node_modules/@types'],
         'import/parsers': {
-          '@typescript-eslint/parser': ['.ts', '.tsx'],
+          '@typescript-eslint/parser': [".ts", ".d.ts", '.tsx'],
         },
         'import/resolver': {
           'node': {
-            'extensions': ['.ts', '.tsx'],
+            'extensions': [".ts", ".d.ts", '.tsx'],
           },
         },
       }
@@ -235,18 +262,19 @@ module.exports = {
       rules: {
         ...tsHeavyRulesOff,
         ...crossPlatformRules,
+        ...nodeJSRules,
       },
       settings: {
-        'import/extensions': ['.ts'],
+        'import/extensions': [".ts", ".d.ts"],
         'import/external-module-folders': ['node_modules', 'node_modules/@types'],
         'import/parsers': {
-          '@typescript-eslint/parser': ['.ts'],
+          '@typescript-eslint/parser': [".ts", ".d.ts"],
         },
-        'import/resolver': {
-          'node': {
-            'extensions': ['.ts'],
-          },
-        },
+        "import/resolver": {
+          "node": {
+            "extensions": [".ts", ".d.ts"]
+           }
+        }
       }
     }
   }
