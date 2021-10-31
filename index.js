@@ -1,5 +1,33 @@
+const { rules: eslintPluginImportRules } = require('eslint-plugin-import');
+
+const importRules = {
+  // this will enable all rules
+  ...Object.keys(eslintPluginImportRules)
+    .reduce((prevValue, ruleName) => ({ ...prevValue, ['import/' + ruleName]: 'error' }), {}),
+
+  // now we have to disable some of them
+  'import/named': 'off',
+  'import/default': 'off',
+  'import/prefer-default-export': 'off',
+  'import/no-internal-modules': 'off',
+  'import/no-relative-parent-imports': 'off',
+  'import/no-relative-packages': 'off',
+  'import/no-named-export': 'off',
+  'import/no-import-module-exports': 'off',
+  'import/group-exports': 'off',
+  "import/exports-last": 'off',
+
+  // disable
+  'import/order': 'off',
+  "sort-imports": 'off',
+  // enable this rules for all import sorting problems
+  'simple-import-sort/imports': 'error',
+  'simple-import-sort/exports': 'error',
+}
+
 const reactRules = {
-  "react/jsx-indent": ["error", 2, {checkAttributes: true, indentLogicalExpressions: true}],
+  "react/jsx-indent": ["error", 2, { checkAttributes: true, indentLogicalExpressions: true }],
+  'react/jsx-indent-props': ["error", 2],
   "react/prop-types": "off", // TODO?
   "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }],
   "react/function-component-definition": ["error", {
@@ -7,6 +35,7 @@ const reactRules = {
     "unnamedComponents": "arrow-function",
   }],
   "react/jsx-max-depth": ["Error", { "max": 8 }],
+  "react/jsx-no-literals": "off",
 
   "@typescript-eslint/naming-convention": [
     "error",
@@ -14,7 +43,6 @@ const reactRules = {
       "selector": "default",
       "format": ["camelCase"]
     },
-
     {
       "selector": "variable",
       "format": ["camelCase", "PascalCase", "UPPER_CASE"]
@@ -45,7 +73,11 @@ const reactRules = {
   ],
   "max-lines-per-function": "off",
   "max-statements": ["error", 15],
-  "react/jsx-no-literals": "off"
+  "react/prop-types": "off",
+  "react/require-default-props": "off",
+
+  "react-hooks/rules-of-hooks": "error",
+  "react-hooks/exhaustive-deps": "error",
 }
 
 const crossPlatformRules = {
@@ -60,7 +92,7 @@ const crossPlatformRules = {
   "@typescript-eslint/object-curly-spacing": ["error", "always"],
 
   "indent": "off",
-  "@typescript-eslint/indent": ["error", 2, { "ignoredNodes": ["JSXElement *", "JSXElement"]}],
+  "@typescript-eslint/indent": ["error", 2, { "ignoredNodes": ["JSXElement *", "JSXElement"] }],
 
   "max-len": ["error", 120],
   "function-call-argument-newline": ["error", "consistent"],
@@ -84,7 +116,12 @@ const crossPlatformRules = {
   "@typescript-eslint/no-type-alias": ["error", { "allowAliases": "in-unions" }],
 
   "multiline-comment-style": "off",
-  "capitalized-comments": "off"
+  "capitalized-comments": "off",
+  'no-warning-comments': 'off',
+
+  'vars-on-top': 'off',
+
+  ...importRules,
 }
 
 const tsHeavyRulesOff = {
@@ -130,7 +167,7 @@ const tsHeavyRulesOff = {
 
 module.exports = {
   configs: {
-    react : {
+    react: {
       env: {
         "browser": true,
       },
@@ -141,20 +178,19 @@ module.exports = {
         "testing-library",
         "jsx-a11y",
         "import",
+        "simple-import-sort",
       ],
       extends: [
         "eslint:all",
         "plugin:@typescript-eslint/all",
         "plugin:react/all",
         "plugin:react/jsx-runtime",
-        "plugin:react-hooks/recommended",
         "plugin:testing-library/react",
-        "plugin:jsx-a11y/recommended",
-        "plugin:import/recommended",
-        "plugin:import/typescript",
+        "plugin:jsx-a11y/recommended"
       ],
       "parser": "@typescript-eslint/parser",
       "parserOptions": {
+        "sourceType": "module",
         "ecmaFeatures": {
           "jsx": true
         }
@@ -162,10 +198,22 @@ module.exports = {
       rules: {
         ...tsHeavyRulesOff,
         ...crossPlatformRules,
-        ...reactRules
+        ...reactRules,
+      },
+      settings: {
+        'import/extensions': ['.ts', '.tsx'],
+        'import/external-module-folders': ['node_modules', 'node_modules/@types'],
+        'import/parsers': {
+          '@typescript-eslint/parser': ['.ts', '.tsx'],
+        },
+        'import/resolver': {
+          'node': {
+            'extensions': ['.ts', '.tsx'],
+          },
+        },
       }
     },
-    nodejs : {
+    nodejs: {
       env: {
         "node": true,
       },
@@ -173,18 +221,32 @@ module.exports = {
         "@typescript-eslint",
         "node",
         "import",
+        "simple-import-sort",
       ],
       extends: [
         "eslint:all",
         "plugin:node/recommended",
-        "plugin:import/recommended",
-        "plugin:import/typescript",
         "plugin:@typescript-eslint/all",
       ],
       "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "sourceType": "module",
+      },
       rules: {
         ...tsHeavyRulesOff,
         ...crossPlatformRules,
+      },
+      settings: {
+        'import/extensions': ['.ts'],
+        'import/external-module-folders': ['node_modules', 'node_modules/@types'],
+        'import/parsers': {
+          '@typescript-eslint/parser': ['.ts'],
+        },
+        'import/resolver': {
+          'node': {
+            'extensions': ['.ts'],
+          },
+        },
       }
     }
   }
