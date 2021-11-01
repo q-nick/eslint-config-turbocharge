@@ -1,34 +1,38 @@
 const { rules: eslintPluginImportRules } = require('eslint-plugin-import');
 
-const importRules = {
-  // this will enable all rules
-  ...Object.keys(eslintPluginImportRules)
-    .reduce((prevValue, ruleName) => ({ ...prevValue, ['import/' + ruleName]: 'error' }), {}),
+// this will enable all rules
+const importRulesAllOn = Object.keys(eslintPluginImportRules)
+.reduce((prevValue, ruleName) => ({ ...prevValue, ['import/' + ruleName]: 'error' }), {});
 
-  // now we have to disable some of them
-  'import/named': 'off',
-  'import/default': 'off',
-  'import/prefer-default-export': 'off',
-  'import/no-internal-modules': 'off',
-  'import/no-relative-parent-imports': 'off',
-  'import/no-relative-packages': 'off',
-  'import/no-named-export': 'off',
-  'import/no-import-module-exports': 'off',
-  'import/group-exports': 'off',
-  "import/exports-last": 'off',
+const importRules = Object.assign(
+  importRulesAllOn,
+  {
+    // now we have to disable some of them
+    'import/named': 'off',
+    'import/default': 'off',
+    'import/prefer-default-export': 'off',
+    'import/no-internal-modules': 'off',
+    'import/no-relative-parent-imports': 'off',
+    'import/no-relative-packages': 'off',
+    'import/no-named-export': 'off',
+    'import/no-import-module-exports': 'off',
+    'import/group-exports': 'off',
+    "import/exports-last": 'off',
 
-  // disable
-  'import/order': 'off',
-  "sort-imports": 'off',
-  // enable this rules for all import sorting problems
-  'simple-import-sort/imports': 'error',
-  'simple-import-sort/exports': 'error',
-}
+    // disable
+    'import/order': 'off',
+    "sort-imports": 'off',
+    // enable this rules for all import sorting problems
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error',
+  }
+);
 
 const reactRules = {
   "react/jsx-indent": ["error", 2, { checkAttributes: true, indentLogicalExpressions: true }],
   'react/jsx-indent-props': ["error", 2],
-  "react/prop-types": "off", // TODO?
+  "react/prop-types": "off",
+  "react/require-default-props": "off",
   "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }],
   "react/function-component-definition": ["error", {
     "namedComponents": "arrow-function",
@@ -36,6 +40,9 @@ const reactRules = {
   }],
   "react/jsx-max-depth": ["Error", { "max": 8 }],
   "react/jsx-no-literals": "off",
+
+  "react-hooks/rules-of-hooks": "error",
+  "react-hooks/exhaustive-deps": "error",
 
   "@typescript-eslint/naming-convention": [
     "error",
@@ -71,13 +78,10 @@ const reactRules = {
       }
     }
   ],
+
   "max-lines-per-function": "off",
   "max-statements": ["error", 15],
-  "react/prop-types": "off",
-  "react/require-default-props": "off",
 
-  "react-hooks/rules-of-hooks": "error",
-  "react-hooks/exhaustive-deps": "error",
   "unicorn/prevent-abbreviations": [
     "error",
     {
@@ -118,62 +122,64 @@ const nodeJSRules = {
   "no-implicit-coercion": "off",
   "array-element-newline": ["error", "consistent"],
   "require-unicode-regexp": "off",
+}
 
-  "unicorn/filename-case": [
-    "error",
-    {
-      "cases": {
-        "kebabCase": true,
-        "pascalCase": true
+const crossPlatformRules = Object.assign(
+  {
+    "arrow-body-style": "off",
+    "padded-blocks": ["error", "never"],
+    "one-var": ["error", "never"],
+    "id-length": "off",
+
+    "quotes": "off",
+    "@typescript-eslint/quotes": ["error", "single"],
+
+    "object-curly-spacing": "off",
+    "@typescript-eslint/object-curly-spacing": ["error", "always"],
+
+    "indent": "off",
+    "@typescript-eslint/indent": ["error", 2, { "ignoredNodes": ["JSXElement *", "JSXElement"] }],
+
+    "max-len": ["error", 120],
+    "function-call-argument-newline": ["error", "consistent"],
+    "no-void": ["error", { "allowAsStatement": true }],
+    "no-undefined": "off",
+    "no-ternary": "off",
+
+    "comma-dangle": "off",
+    "@typescript-eslint/comma-dangle": ["error", "always-multiline"],
+
+    "no-extra-parens": ["error", "all", { ignoreJSX: "multi-line", "enforceForArrowConditionals": false }],
+    "@typescript-eslint/no-extra-parens": "off",
+
+    "@typescript-eslint/prefer-readonly-parameter-types": "off",
+
+    "array-element-newline": ["error", { "multiline": true, "minItems": 5 }],
+    "object-property-newline": ["error", { allowAllPropertiesOnSameLine: true }],
+    "function-paren-newline": ["error", "multiline"],
+    "sort-keys": "off",
+    "quote-props": ["error", "as-needed"],
+    "@typescript-eslint/no-type-alias": ["error", { "allowAliases": "in-unions" }],
+
+    "multiline-comment-style": "off",
+    "capitalized-comments": "off",
+    'no-warning-comments': 'off',
+
+    'vars-on-top': 'off',
+
+
+    "unicorn/filename-case": [
+      "error",
+      {
+        "cases": {
+          "kebabCase": true,
+          "pascalCase": true
+        }
       }
-    }
-  ]
-}
-
-const crossPlatformRules = {
-  "arrow-body-style": "off",
-  "padded-blocks": ["error", "never"],
-  "one-var": ["error", "never"],
-  "id-length": "off",
-
-  "quotes": "off",
-  "@typescript-eslint/quotes": ["error", "single"],
-
-  "object-curly-spacing": "off",
-  "@typescript-eslint/object-curly-spacing": ["error", "always"],
-
-  "indent": "off",
-  "@typescript-eslint/indent": ["error", 2, { "ignoredNodes": ["JSXElement *", "JSXElement"] }],
-
-  "max-len": ["error", 120],
-  "function-call-argument-newline": ["error", "consistent"],
-  "no-void": ["error", { "allowAsStatement": true }],
-  "no-undefined": "off",
-  "no-ternary": "off",
-
-  "comma-dangle": "off",
-  "@typescript-eslint/comma-dangle": ["error", "always-multiline"],
-
-  "no-extra-parens": ["error", "all", { ignoreJSX: "multi-line", "enforceForArrowConditionals": false }],
-  "@typescript-eslint/no-extra-parens": "off",
-
-  "@typescript-eslint/prefer-readonly-parameter-types": "off",
-
-  "array-element-newline": ["error", { "multiline": true, "minItems": 5 }],
-  "object-property-newline": ["error", { allowAllPropertiesOnSameLine: true }],
-  "function-paren-newline": ["error", "multiline"],
-  "sort-keys": "off",
-  "quote-props": ["error", "as-needed"],
-  "@typescript-eslint/no-type-alias": ["error", { "allowAliases": "in-unions" }],
-
-  "multiline-comment-style": "off",
-  "capitalized-comments": "off",
-  'no-warning-comments': 'off',
-
-  'vars-on-top': 'off',
-
-  ...importRules,
-}
+    ]
+  },
+  importRules
+);
 
 const tsHeavyRulesOff = {
   "@typescript-eslint/unbound-method": "off",
@@ -247,11 +253,7 @@ module.exports = {
           "jsx": true
         }
       },
-      rules: {
-        ...tsHeavyRulesOff,
-        ...crossPlatformRules,
-        ...reactRules,
-      },
+      rules: Object.assign(tsHeavyRulesOff, crossPlatformRules, reactRules),
       settings: {
         'import/extensions': [".ts", ".d.ts", '.tsx'],
         'import/external-module-folders': ['node_modules', 'node_modules/@types'],
@@ -285,11 +287,7 @@ module.exports = {
       "parserOptions": {
         "sourceType": "module",
       },
-      rules: {
-        ...tsHeavyRulesOff,
-        ...crossPlatformRules,
-        ...nodeJSRules,
-      },
+      rules: Object.assign(tsHeavyRulesOff, crossPlatformRules, nodeJSRules),
       settings: {
         'import/extensions': [".ts", ".d.ts"],
         'import/external-module-folders': ['node_modules', 'node_modules/@types'],

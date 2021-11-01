@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-ultimate-typescript-config",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Ultimate Eslint Typescript Config",
   "main": "index.js",
   "scripts": {
@@ -34,8 +34,8 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-testing-library": "^5.0.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
-    "eslint": "^7.32.0",
     "eslint-plugin-unicorn": "^37.0.1",
+    "eslint": "^7.32.0",
     "typescript": "^4.4.4"
   }
 }
