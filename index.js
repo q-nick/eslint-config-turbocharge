@@ -78,6 +78,17 @@ const reactRules = {
 
   "react-hooks/rules-of-hooks": "error",
   "react-hooks/exhaustive-deps": "error",
+  "unicorn/prevent-abbreviations": [
+    "error",
+    {
+      "ignore": [
+        "Props",
+        "props",
+        "Ref",
+        "ref"
+      ]
+    }
+  ]
 }
 
 const nodeJSRules = {
@@ -92,22 +103,35 @@ const nodeJSRules = {
     "tryExtensions": [".ts", ".d.ts"]
   }],
   "@typescript-eslint/naming-convention": "off",
-  "max-statements": ["error", 15],
-  "import/no-namespace": "off",
   "@typescript-eslint/no-magic-numbers": "off",
+
+  "import/no-namespace": "off",
+  "import/no-nodejs-modules": "off",
   "import/max-dependencies": ["error", {
     "max": 15,
     "ignoreTypeImports": false
   }],
-  "no-implicit-coercion": "off",
-  "import/no-nodejs-modules": "off",
-  "array-element-newline": ["error", "consistent"],
   "import/unambiguous": "off",
-  "arrow-body-style": "off",
-  "max-lines-per-function": ["error", 200]
+
+  "max-statements": ["error", 15],
+  "max-lines-per-function": ["error", 200],
+  "no-implicit-coercion": "off",
+  "array-element-newline": ["error", "consistent"],
+  "require-unicode-regexp": "off",
+
+  "unicorn/filename-case": [
+    "error",
+    {
+      "cases": {
+        "kebabCase": true,
+        "pascalCase": true
+      }
+    }
+  ]
 }
 
 const crossPlatformRules = {
+  "arrow-body-style": "off",
   "padded-blocks": ["error", "never"],
   "one-var": ["error", "never"],
   "id-length": "off",
@@ -213,7 +237,8 @@ module.exports = {
         "plugin:react/all",
         "plugin:react/jsx-runtime",
         "plugin:testing-library/react",
-        "plugin:jsx-a11y/recommended"
+        "plugin:jsx-a11y/recommended",
+        "plugin:unicorn/recommended"
       ],
       "parser": "@typescript-eslint/parser",
       "parserOptions": {
@@ -254,6 +279,7 @@ module.exports = {
         "eslint:all",
         "plugin:node/recommended",
         "plugin:@typescript-eslint/all",
+        "plugin:unicorn/recommended"
       ],
       "parser": "@typescript-eslint/parser",
       "parserOptions": {
