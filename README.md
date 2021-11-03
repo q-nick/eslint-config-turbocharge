@@ -38,7 +38,7 @@ or for nodejs:
 }
 ```
 
-### Single repo, different configuration
+### Single repo, different presets
 There is also a way to use different presets per folders in your proejct. Lets say that you have thsis tructure:
 
 ```
