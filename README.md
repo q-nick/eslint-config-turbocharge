@@ -43,17 +43,25 @@ or for nodejs:
 There is also a way to use different presets per folders in your proejct. Lets say that you have thsis tructure:
 
 ```
-|-frontend
-|-backend
+your-project
+├── package.json
+├── frontend
+│ └── frontend.js
+└─┬ backend
+  └── backend.js
 ```
 
 In this situation the best approach is to avoid .eslintrc in root folder and define two configs per specific fodler:
 
 ```
-|-frontend
-     |- .eslintrc.json
-|-backend
-     |- .eslintrc.json
+your-project
+├── package.json
+├── frontend
+│ ├── eslintrc.json
+│ └── frontend.js
+└─┬ backend
+  ├── eslintrc.json
+  └── backend.js
 ```
 
 but they are a bit different from basic example, you will have to to put `"root": true` in them:
