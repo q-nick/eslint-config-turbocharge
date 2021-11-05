@@ -3,10 +3,10 @@
 [![Build Status](https://travis-ci.org/q-nick/eslint-config-ultimate-typescript.svg)](https://travis-ci.org/q-nick/eslint-config-ultimate-typescript) <a href="https://www.npmjs.com/package/eslint-config-ultimate-typescript"><img src="https://img.shields.io/npm/dm/eslint-config-ultimate-typescript.svg" alt="Downloads"></a> <a href="https://www.npmjs.com/package/eslint-config-ultimate-typescript"><img src="https://img.shields.io/npm/v/eslint-config-ultimate-typescript.svg" alt="Version"></a> <a href="https://www.npmjs.com/package/npm-gui"><img src="https://img.shields.io/npm/l/npm-gui.svg" alt="License"></a>
 
 ## About
-ESlint is the best tool in the world which improves your Javascript code. It acts as a guide showing you good practices and helping you to avoid unnedeed problems. 
+ESlint is the best tool in the world which improves your Javascript code. It acts as a guide showing you good practices and helping you to avoid unecessary issues. 
 It also allow you to keep your code style consistent between many environments and many projects.
 
-The only disadvantage is that it's not very easy to be configurated, especially if you want to connect it with Typescript.
+The only disadvantage is that it's not very easy to be configured, especially if you want to connect it with Typescript.
 
 But its not the only one.... TODO
 
