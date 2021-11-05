@@ -14,7 +14,6 @@ const nodeJSRules = {
   "@typescript-eslint/naming-convention": "off",
   "@typescript-eslint/no-magic-numbers": "off",
 
-  "import/no-namespace": "off",
   "import/no-nodejs-modules": "off",
   "import/max-dependencies": ["error", {
     "max": 15,

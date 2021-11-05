@@ -112,7 +112,6 @@ const crossPlatformRules = Object.assign(
 
     'vars-on-top': 'off',
 
-
     "unicorn/filename-case": [
       "error",
       {
