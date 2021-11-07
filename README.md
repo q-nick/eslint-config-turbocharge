@@ -3,10 +3,10 @@
 [![Build Status](https://travis-ci.org/q-nick/eslint-config-ultimate-typescript.svg)](https://travis-ci.org/q-nick/eslint-config-ultimate-typescript) <a href="https://www.npmjs.com/package/eslint-config-ultimate-typescript"><img src="https://img.shields.io/npm/dm/eslint-config-ultimate-typescript.svg" alt="Downloads"></a> <a href="https://www.npmjs.com/package/eslint-config-ultimate-typescript"><img src="https://img.shields.io/npm/v/eslint-config-ultimate-typescript.svg" alt="Version"></a> <a href="https://www.npmjs.com/package/npm-gui"><img src="https://img.shields.io/npm/l/npm-gui.svg" alt="License"></a>
 
 ## About
-ESlint is the best tool in the world which improves your Javascript code. It acts as a guide showing you good practices and helping you to avoid unecessary issues. 
-It also allow you to keep your code style consistent between many environments and many projects.
+ESlint is the best tool in the world that improves your Javascript code. It acts as a guide showing you good practices and helping you to avoid unnecessary issues. 
+It also allows you to keep your code style consistent between many environments and many projects.
 
-The only disadvantage is that it's not very easy to be configured, especially if you want to connect it with Typescript.
+The only disadvantage is that it's not very easy to configure, especially if you want to connect it with Typescript.
 
 But its not the only one.... TODO
 
@@ -14,14 +14,14 @@ But its not the only one.... TODO
 ## Getting Started
 The purpose of this config is to keep extremely easy to use ESlint+Typescript in your project. 
 
-So the first thing you have to do is to **remove all eslint dependencies** (including plugins, almost everything that contains _eslint_ in name) from your package json.
+So the first thing you have to do is to **remove all eslint dependencies** (including plugins, almost everything that contains _eslint_ in the name) from your package json.
 And then you can install this package:
 ```
 npm i --save-dev eslint-config-ultimate-typescript
 ```
 
 ### Configuration
-This config contains a few presets for different kind of projects:
+This config contains a few presets for different kinds of projects:
 
 - react
 - nodejs
@@ -40,7 +40,7 @@ or for nodejs:
 ```
 
 ### Single repo, different presets
-There is also a way to use different presets per folders in your proejct. Lets say that you have thsis tructure:
+There is also a way to use different presets per folder in your project. Let's say that you have this structure:
 
 ```
 your-project
@@ -51,7 +51,7 @@ your-project
   └── backend.js
 ```
 
-In this situation the best approach is to avoid .eslintrc in root folder and define two configs per specific fodler:
+In this situation the best approach is to avoid .eslintrc in the root folder and define two configs per specific folder:
 
 ```
 your-project
@@ -64,7 +64,7 @@ your-project
   └── backend.js
 ```
 
-but they are a bit different from basic example, you will have to to put `"root": true` in them:
+But they are a bit different from basic example, you will have to put `"root": true` in them:
 frontend:
 ```
 {
