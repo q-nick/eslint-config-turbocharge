@@ -96,7 +96,7 @@ module.exports ={
       "jsx": true
     }
   },
-  rules: Object.assign(rules.crossPlatformRules, reactRules),
+  rules: Object.assign({}, rules.crossPlatformRules, reactRules),
   settings: {
     'import/extensions': [".ts", ".d.ts", '.tsx'],
     'import/external-module-folders': ['node_modules', 'node_modules/@types'],

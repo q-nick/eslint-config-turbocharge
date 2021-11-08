@@ -5,6 +5,7 @@ const importRulesAllOn = Object.keys(eslintPluginImportRules)
 .reduce((prevValue, ruleName) => ({ ...prevValue, ['import/' + ruleName]: 'error' }), {});
 
 const importRules = Object.assign(
+  {},
   importRulesAllOn,
   {
     // now we have to disable some of them
@@ -70,48 +71,68 @@ const tsHeavyRulesOff = {
 }
 
 const crossPlatformRules = Object.assign(
+  {},
   {
     "arrow-body-style": "off",
     "padded-blocks": ["error", "never"],
     "one-var": ["error", "never"],
     "id-length": "off",
-
-    "quotes": "off",
-    "@typescript-eslint/quotes": ["error", "single"],
-
-    "object-curly-spacing": "off",
-    "@typescript-eslint/object-curly-spacing": ["error", "always"],
-
-    "indent": "off",
-    "@typescript-eslint/indent": ["error", 2, { "ignoredNodes": ["JSXElement *", "JSXElement"] }],
-
-    "max-len": ["error", 120],
     "function-call-argument-newline": ["error", "consistent"],
     "no-void": ["error", { "allowAsStatement": true }],
     "no-undefined": "off",
     "no-ternary": "off",
+    'vars-on-top': 'off',
+    "no-implicit-coercion": "off",
+    "require-unicode-regexp": "off",
+    "sort-keys": "off",
 
+    // max statements, imports, lines per function, length, params
+    "max-statements": ["error", 15],
+    "max-lines-per-function": ["error", 200],
+    "import/max-dependencies": ["error", {
+      "max": 15,
+      "ignoreTypeImports": false
+    }],
+    "max-len": ["error", 120],
+    "max-params": ["error", 5],
+
+    // quotes
+    "quote-props": ["error", "as-needed"],
+    "quotes": "off",
+    "@typescript-eslint/quotes": ["error", "single"],
+
+    // object curly spacing
+    "object-curly-spacing": "off",
+    "@typescript-eslint/object-curly-spacing": ["error", "always"],
+
+     // indent
+    "indent": "off",
+    "@typescript-eslint/indent": ["error", 2, { "ignoredNodes": ["JSXElement *", "JSXElement"] }],
+
+    // comma ,
     "comma-dangle": "off",
     "@typescript-eslint/comma-dangle": ["error", "always-multiline"],
 
+    // parens
     "no-extra-parens": ["error", "all", { ignoreJSX: "multi-line", "enforceForArrowConditionals": false }],
     "@typescript-eslint/no-extra-parens": "off",
 
+    // typescript other
     "@typescript-eslint/prefer-readonly-parameter-types": "off",
+    "@typescript-eslint/no-type-alias": ["error", { "allowAliases": "in-unions" }],
 
+    // new line: array, objects
+    "array-element-newline": ["error", "consistent"],
     "array-element-newline": ["error", { "multiline": true, "minItems": 5 }],
     "object-property-newline": ["error", { allowAllPropertiesOnSameLine: true }],
     "function-paren-newline": ["error", "multiline"],
-    "sort-keys": "off",
-    "quote-props": ["error", "as-needed"],
-    "@typescript-eslint/no-type-alias": ["error", { "allowAliases": "in-unions" }],
 
+    // comments
     "multiline-comment-style": "off",
     "capitalized-comments": "off",
     'no-warning-comments': 'off',
 
-    'vars-on-top': 'off',
-
+    // unicorn
     "unicorn/filename-case": [
       "error",
       {
@@ -120,7 +141,10 @@ const crossPlatformRules = Object.assign(
           "pascalCase": true
         }
       }
-    ]
+    ],
+    "unicorn/no-null": "off",
+    "unicorn/prefer-module": "off",
+    "unicorn/prefer-node-protocol": 0,
   },
   importRules,
   tsHeavyRulesOff
