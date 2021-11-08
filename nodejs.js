@@ -11,21 +11,18 @@ const nodeJSRules = {
   "node/no-unpublished-import": ["error", {
     "tryExtensions": [".ts", ".d.ts"]
   }],
+  "node/no-missing-import": ["error", {
+    "tryExtensions": [".js", ".json", ".ts", ".tsx", ".d.ts", ".node"]
+  }],
+
+  // typescript
   "@typescript-eslint/naming-convention": "off",
   "@typescript-eslint/no-magic-numbers": "off",
 
+   // import
   "import/no-nodejs-modules": "off",
-  "import/max-dependencies": ["error", {
-    "max": 15,
-    "ignoreTypeImports": false
-  }],
   "import/unambiguous": "off",
-
-  "max-statements": ["error", 15],
-  "max-lines-per-function": ["error", 200],
-  "no-implicit-coercion": "off",
-  "array-element-newline": ["error", "consistent"],
-  "require-unicode-regexp": "off",
+  "@typescript-eslint/quotes": ["error", "double"],
 }
 
 module.exports ={
@@ -48,7 +45,7 @@ module.exports ={
   "parserOptions": {
     "sourceType": "module",
   },
-  rules: Object.assign(rules.crossPlatformRules, nodeJSRules),
+  rules: Object.assign({}, rules.crossPlatformRules, nodeJSRules),
   settings: {
     'import/extensions': [".ts", ".d.ts"],
     'import/external-module-folders': ['node_modules', 'node_modules/@types'],
