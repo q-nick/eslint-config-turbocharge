@@ -123,7 +123,6 @@ const crossPlatformRules = Object.assign(
 
     // new line: array, objects
     "array-element-newline": ["error", "consistent"],
-    "array-element-newline": ["error", { "multiline": true, "minItems": 5 }],
     "object-property-newline": ["error", { allowAllPropertiesOnSameLine: true }],
     "function-paren-newline": ["error", "multiline"],
 

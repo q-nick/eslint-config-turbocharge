@@ -1,18 +1,23 @@
 const rules = require('./cross-platform-rules');
 
 const reactRules = {
-  "react/jsx-indent": ["error", 2, { checkAttributes: true, indentLogicalExpressions: true }],
-  'react/jsx-indent-props': ["error", 2],
+  // off
   "react/prop-types": "off",
   "react/require-default-props": "off",
+  "react/jsx-no-literals": "off",
+
+  // reconfigured
   "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }],
   "react/function-component-definition": ["error", {
     "namedComponents": "arrow-function",
     "unnamedComponents": "arrow-function",
   }],
   "react/jsx-max-depth": ["Error", { "max": 8 }],
-  "react/jsx-no-literals": "off",
 
+  // indent
+  "react/jsx-indent": ["error", 2, { checkAttributes: true, indentLogicalExpressions: true }],
+  'react/jsx-indent-props': ["error", 2],
+  // hooks
   "react-hooks/rules-of-hooks": "error",
   "react-hooks/exhaustive-deps": "error",
 
@@ -50,9 +55,6 @@ const reactRules = {
       }
     }
   ],
-
-  "max-lines-per-function": "off",
-  "max-statements": ["error", 15],
 
   "unicorn/prevent-abbreviations": [
     "error",
