@@ -5,14 +5,11 @@ const nodeJSRules = {
     "version": ">=14.0.0",
     "ignores": ["modules"]
   }],
-  "node/no-missing-import": ["error", {
-    "tryExtensions": [".ts", ".d.ts", ".json", ".node"]
-  }],
   "node/no-unpublished-import": ["error", {
     "tryExtensions": [".ts", ".d.ts"]
   }],
   "node/no-missing-import": ["error", {
-    "tryExtensions": [".js", ".json", ".ts", ".tsx", ".d.ts", ".node"]
+    "tryExtensions": [".js", ".json", ".ts", ".d.ts", ".node"]
   }],
 
   // typescript
