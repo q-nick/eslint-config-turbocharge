@@ -6,9 +6,9 @@
 ESlint is the best tool in the world that improves your Javascript code. It acts as a guide showing you good practices and helping you to avoid unnecessary issues. 
 It also allows you to keep your code style consistent between many environments and many projects.
 
-The only disadvantage is that it's not very easy to configure, especially if you want to connect it with Typescript.
+But it's not alone - Typescript is another excellent tool that could be helpful in our daily work - this one is bringing to us static typings.
 
-But its not the only one.... TODO
+The only disadvantage of them is that they are not very easy to configure, especially if you want to connect them with React or any other Framework.
 
 #
 ## Getting Started
