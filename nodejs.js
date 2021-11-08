@@ -22,7 +22,6 @@ const nodeJSRules = {
    // import
   "import/no-nodejs-modules": "off",
   "import/unambiguous": "off",
-  "@typescript-eslint/quotes": ["error", "double"],
 }
 
 module.exports ={
