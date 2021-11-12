@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "incremental": true,
+
+    "target": "es5",
+    "lib": [ "dom", "dom.iterable", "esnext" ],
+    "jsx": "react-jsx",
+
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+
+    "noEmit": true,
+    "downlevelIteration": true,
+
+    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+
+    "skipLibCheck": true
+  }
+}
