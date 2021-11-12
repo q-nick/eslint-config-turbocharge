@@ -99,6 +99,15 @@ module.exports ={
     }
   },
   rules: Object.assign({}, rules.crossPlatformRules, reactRules),
+  "overrides": [
+    {
+     "files": ["*stories*"], // storybook defautl export exception
+        "rules": {
+           "import/no-default-export": "off",
+           "import/no-anonymous-default-export": "off"
+        }
+    }
+  ],
   settings: {
     'import/extensions': [".ts", ".d.ts", '.tsx'],
     'import/external-module-folders': ['node_modules', 'node_modules/@types'],
