@@ -35,7 +35,8 @@ module.exports ={
     "eslint:all",
     "plugin:node/recommended",
     "plugin:@typescript-eslint/all",
-    "plugin:unicorn/recommended"
+    "plugin:unicorn/recommended",
+    "prettier"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
