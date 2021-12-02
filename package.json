@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-ultimate-typescript",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "Ultimate Eslint Typescript Config",
   "main": "index.js",
   "scripts": {
