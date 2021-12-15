@@ -1,18 +1,13 @@
 {
-  "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "jsx": "react-jsx",
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Node",
 
-    "module": "esnext",
-    "moduleResolution": "node",
+  "compilerOptions": {
+    "lib": ["es2021"],
+    "module": "commonjs",
+    "target": "es2021",
     "resolveJsonModule": true,
 
-    "noEmit": true,
-    "downlevelIteration": true,
-
-    "isolatedModules": true,
-    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
 
