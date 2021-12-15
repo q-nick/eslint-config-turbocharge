@@ -71,6 +71,7 @@ const tsHeavyRulesOff = {
 const crossPlatformRules = Object.assign(
   {},
   {
+    'arrow-body-style': 'off',
     'one-var': ['error', 'never'],
     'id-length': 'off',
     'no-void': ['error', { allowAsStatement: true }],
