@@ -19,6 +19,13 @@ const importRules = Object.assign({}, importRulesAllOn, {
   'import/group-exports': 'off',
   'import/exports-last': 'off',
 
+  'import/max-dependencies': [
+    'error',
+    {
+      max: 15,
+      ignoreTypeImports: true,
+    },
+  ],
   // disable
   'import/order': 'off',
   'sort-imports': 'off',
@@ -68,7 +75,20 @@ const tsHeavyRulesOff = {
   '@typescript-eslint/switch-exhaustiveness-check': 'off',
 };
 
-const crossPlatformRules = Object.assign(
+const crossPlatformTSRules = Object.assign(
+  {},
+  {
+    // typescript other
+    '@typescript-eslint/prefer-readonly-parameter-types': 'off',
+    '@typescript-eslint/no-type-alias': [
+      'error',
+      { allowAliases: 'in-unions' },
+    ],
+  },
+  tsHeavyRulesOff,
+);
+
+const crossPlatformJSRules = Object.assign(
   {},
   {
     'arrow-body-style': 'off',
@@ -82,6 +102,10 @@ const crossPlatformRules = Object.assign(
     'require-unicode-regexp': 'off',
     'sort-keys': 'off',
 
+    // enable warnings for some rules
+    'no-magic-numbers': 'warn',
+    'prefer-named-capture-group': 'warn',
+
     // max statements, imports, lines per function, length, params
     'max-statements': ['error', 15],
     'max-lines-per-function': ['error', 200],
@@ -93,13 +117,6 @@ const crossPlatformRules = Object.assign(
       },
     ],
     'max-params': ['error', 5],
-
-    // typescript other
-    '@typescript-eslint/prefer-readonly-parameter-types': 'off',
-    '@typescript-eslint/no-type-alias': [
-      'error',
-      { allowAliases: 'in-unions' },
-    ],
 
     // comments
     'capitalized-comments': 'off',
@@ -120,9 +137,16 @@ const crossPlatformRules = Object.assign(
     'unicorn/prefer-node-protocol': 0,
   },
   importRules,
-  tsHeavyRulesOff,
+);
+
+const crossPlatformRules = Object.assign(
+  {},
+  crossPlatformJSRules,
+  crossPlatformTSRules,
 );
 
 module.exports = {
+  crossPlatformTSRules,
+  crossPlatformJSRules,
   crossPlatformRules,
 };

@@ -1,7 +1,7 @@
 {
-  "name": "eslint-config-ultimate-typescript",
+  "name": "eslint-config-supercharge",
   "version": "0.1.0",
-  "description": "Ultimate Eslint Typescript Config",
+  "description": "Supercharge Eslint Config",
   "main": "index.json",
   "scripts": {
     "test:react": "eslint react",
@@ -9,12 +9,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/q-nick/eslint-config-ultimate-typescript.git"
+    "url": "git+https://github.com/q-nick/eslint-config-supercharge.git"
   },
   "keywords": [
     "eslint",
     "eslintconfig",
     "typescript",
+    "supercharge",
     "linter",
     "code",
     "prettier",
@@ -23,9 +24,9 @@
   "author": "Paweł Stefański",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/q-nick/eslint-config-ultimate-typescript/issues"
+    "url": "https://github.com/q-nick/eslint-config-supercharge/issues"
   },
-  "homepage": "https://github.com/q-nick/eslint-config-ultimate-typescript#readme",
+  "homepage": "https://github.com/q-nick/eslint-config-supercharge#readme",
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.2.0",
     "@typescript-eslint/parser": "^5.2.0",
@@ -41,6 +42,6 @@
     "eslint-plugin-testing-library": "^5.0.0",
     "eslint-plugin-unicorn": "^37.0.1",
     "prettier": "^2.5.0",
-    "typescript": "^4.5.2"
+    "typescript": "^4.5.4"
   }
 }
