@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-supercharge",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Supercharge Eslint Config",
   "main": "index.json",
   "scripts": {
