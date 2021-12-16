@@ -1,6 +1,10 @@
 const rules = require('./cross-platform-rules');
 
 const reactRules = {
+  //warn
+  'react/forbid-component-props': 'warn',
+  'react/jsx-no-bind': 'warn',
+
   // off
   'react/prop-types': 'off',
   'react/require-default-props': 'off',
@@ -17,13 +21,6 @@ const reactRules = {
   ],
   'react/jsx-max-depth': ['Error', { max: 8 }],
 
-  // indent
-  'react/jsx-indent': [
-    'error',
-    2,
-    { checkAttributes: true, indentLogicalExpressions: true },
-  ],
-  'react/jsx-indent-props': ['error', 2],
   // hooks
   'react-hooks/rules-of-hooks': 'error',
   'react-hooks/exhaustive-deps': 'error',
@@ -106,10 +103,11 @@ module.exports = {
   rules: Object.assign({}, rules.crossPlatformRules, reactRules),
   overrides: [
     {
-      files: ['*stories*'], // storybook default export exception
+      files: ['*stories*', '*story*'], // storybook default export exception
       rules: {
         'import/no-default-export': 'off',
         'import/no-anonymous-default-export': 'off',
+        'react/no-multi-comp': 'off',
       },
     },
   ],
