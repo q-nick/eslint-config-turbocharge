@@ -109,7 +109,7 @@ const crossPlatformJSRules = Object.assign(
     'no-implicit-coercion': 'off',
     'require-unicode-regexp': 'off',
     'sort-keys': 'off',
-    'no-negated-conditions': 'off',
+    'no-negated-condition': 'off',
 
     // enable warnings for some rules
     'no-magic-numbers': 'warn',
