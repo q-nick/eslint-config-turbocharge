@@ -78,7 +78,15 @@ const tsHeavyRulesOff = {
 const crossPlatformTSRules = Object.assign(
   {},
   {
-    // typescript other
+    'no-magic-numbers': 'off',
+    '@typescript-eslint/no-magic-numbers': [
+      'warn',
+      {
+        ignoreEnums: true,
+        ignoreNumericLiteralTypes: true,
+        ignoreReadonlyClassProperties: true,
+      },
+    ],
     '@typescript-eslint/prefer-readonly-parameter-types': 'off',
     '@typescript-eslint/no-type-alias': [
       'error',
@@ -101,6 +109,7 @@ const crossPlatformJSRules = Object.assign(
     'no-implicit-coercion': 'off',
     'require-unicode-regexp': 'off',
     'sort-keys': 'off',
+    'no-negated-conditions': 'off',
 
     // enable warnings for some rules
     'no-magic-numbers': 'warn',
@@ -134,7 +143,8 @@ const crossPlatformJSRules = Object.assign(
     ],
     'unicorn/no-null': 'off',
     'unicorn/prefer-module': 'off',
-    'unicorn/prefer-node-protocol': 0,
+    'unicorn/prefer-node-protocol': 'off',
+    'unicorn/no-useless-undefined': 'off',
   },
   importRules,
 );
