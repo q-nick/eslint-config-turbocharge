@@ -87,77 +87,127 @@ your-project
 
 Now everything is set up.
 
-
-### Setting up a React project
+## Setting up a React project
 
 ---
 
-Basic config for react project could look like this (.eslintrc.json):
-
-```
-{
-    "extends": "supercharge/react",
-    "root": true
-}
-```
-
-### Setting up a Node project
-
-or for nodejs:
-
-```
-{
-    "extends": "supercharge/nodejs",
-    "root": true
-}
-```
-
-### Setting up a project with Node and React
-
-There is also a way to use different presets per folder in your project. Let's say that you have this structure:
+We are going to use a project structure the same as for Basic setup. But now _src_ folder will contain React components.
 
 ```
 your-project
 ├── package.json
-├── frontend
-│ └── frontend.js
-└─┬ backend
-  └── backend.js
+├── .eslintrc
+├── .prettierrc
+├── .tsconfig.json
+├── config.js
+├── src
+│ ├── .tsconfig.json     <== new
+│ ├── .eslintrc          <== new
+│ ├── App.tsx
+│ └── Navbar.tsx
+└── node_modules
 ```
 
-In this situation the best approach is to avoid .eslintrc in the root folder and define two configs per specific folder:
+**.eslintrc**
+```
+{ "extends": "supercharge/react", "root": true }
+```
+**.tsconfig.json**
+```
+{  "extends": "eslint-config-supercharge/react/tsconfig.json" }
+```
+
+First we are going to put additional **.tsconfig.json** and **.eslintrc** files inside src folder, also with **"root": true** property - this is crucial. 
+
+This way we change eslint/typescript behavior only for **src** files. Top-level files like config.js (i.e. webpack.config.js) will not report any problems related to React rules.
+
+## Setting up a Node project
+
+---
+
+We are going to use a project structure the same as for Basic setup. But now _src_ folder will contain Node files.
 
 ```
 your-project
 ├── package.json
-├── frontend
-│ ├── eslintrc.json
-│ └── frontend.js
-└─┬ backend
-  ├── eslintrc.json
-  └── backend.js
+├── .eslintrc
+├── .prettierrc
+├── .tsconfig.json
+├── config.js
+├── src
+│ ├── .tsconfig.json     <== new
+│ ├── .eslintrc          <== new
+│ ├── service.ts
+│ ├── server.ts
+│ └── controller.ts
+└── node_modules
 ```
 
-But they are a bit different from basic example, you will have to put `"root": true` in them:
-frontend:
-
+**.eslintrc**
 ```
-{
-    "root": true,
-    "extends": "supercharge/react"
-}
+{ "extends": "supercharge/node", "root": true }
 ```
-
-backend:
-
+**.tsconfig.json**
 ```
-{
-    "root": true,
-    "extends": "supercharge/nodejs"
-}
+{  "extends": "eslint-config-supercharge/node/tsconfig.json" }
 ```
 
-It's not necessary, but it makes you sure that the only config you are using is defined in that files.
+First we are going to put additional **.tsconfig.json** and **.eslintrc** files inside src folder, also with **"root": true** property - this is crucial. 
+
+This way we change eslint/typescript behavior only for **src** files. Top-level files like config.js (i.e. webpack.config.js) will not report any problems related to Node rules.
+
+
+## Setting up a project with Node and React
+
+Looking at React and Node examples, we can try to mix them up in project which contain both React and Node code. 
+
+Example project structure based on Basic project:
+
+```
+your-project
+├── package.json
+├── .eslintrc
+├── .prettierrc
+├── .tsconfig.json
+├── config.js
+├── src-backend
+│ ├── .tsconfig.json     <==
+│ ├── .eslintrc          <==
+│ ├── service.ts
+│ ├── server.ts
+│ └── controller.ts
+├── src-frontend
+│ ├── .tsconfig.json     <==
+│ ├── .eslintrc          <==
+│ ├── service.ts
+│ ├── server.ts
+│ └── controller.ts
+└── node_modules
+```
+
+**.eslintrc**
+```
+{ "extends": "supercharge/node", "root": true }
+```
+**.tsconfig.json**
+```
+{  "extends": "eslint-config-supercharge/node/tsconfig.json" }
+```
+
+**.eslintrc**
+```
+{ "extends": "supercharge/react", "root": true }
+```
+**.tsconfig.json**
+```
+{  "extends": "eslint-config-supercharge/react/tsconfig.json" }
+```
+
+Simple as that.
+
+## Explanations
+
+- **"root": true** -  makes you sure that the only config you are using is defined in that file.
 
 ## What's inside
 
