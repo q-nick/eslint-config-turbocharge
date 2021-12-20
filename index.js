@@ -5,7 +5,7 @@ module.exports = {
   env: {
     node: true,
   },
-  plugins: ['import', 'node', 'simple-import-sort'],
+  plugins: ['import', 'node', 'simple-import-sort', 'unicorn'],
   extends: [
     'eslint:all',
     'plugin:unicorn/recommended',

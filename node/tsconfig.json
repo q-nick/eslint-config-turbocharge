@@ -3,9 +3,10 @@
   "display": "Node",
 
   "compilerOptions": {
-    "lib": ["es2021"],
+    "lib": ["es2018"],
     "module": "commonjs",
-    "target": "es2021",
+    "target": "es2018",
+
     "resolveJsonModule": true,
 
     "esModuleInterop": true,
