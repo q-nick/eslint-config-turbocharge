@@ -42,7 +42,7 @@ This config contains a few presets for different kinds of projects:
 - nodejs
 - react-native (TODO)
 
-### Setting up a basic project
+## Setting up a basic project
 
 Let's say that you have a project structure like this and already installed _eslint-config-supercharger_:
 
@@ -67,7 +67,7 @@ To enable eslint - you will need proper **.eslintrc**, for typescript - **tsconf
 **.tsconfig.json**
 
 ```
-{  "extends": "eslint-config-supercharge/tsconfig.json" }
+{  "extends": "eslint-config-supercharge/node/tsconfig.json" }
 ```
 
 **.prettierrc**
@@ -94,8 +94,6 @@ your-project
 Now everything is set up.
 
 ## Setting up a React project
-
----
 
 We are going to use a project structure the same as for Basic setup. But now _src_ folder will contain React components.
 
@@ -131,8 +129,6 @@ First we are going to put additional **.tsconfig.json** and **.eslintrc** files 
 This way we change eslint/typescript behavior only for **src** files. Top-level files like config.js (i.e. webpack.config.js) will not report any problems related to React rules.
 
 ## Setting up a Node project
-
----
 
 We are going to use a project structure the same as for Basic setup. But now _src_ folder will contain Node files.
 
