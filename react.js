@@ -81,6 +81,7 @@ module.exports = {
     'import',
     'simple-import-sort',
     'styled-components-a11y',
+    'unicorn',
   ],
   extends: [
     'eslint:all',

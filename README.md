@@ -3,6 +3,7 @@
   <p>The purpose of this config is to keep extremely easy to use <b>ESLint</b>, <b>Typescript</b>, and <b>Prettier</b> in any project.</p>
 
 <a href="https://www.npmjs.com/package/eslint-config-supercharge"><img src="https://img.shields.io/npm/dm/eslint-config-supercharge.svg" alt="Downloads"></a> <a href="https://www.npmjs.com/package/eslint-config-supercharge"><img src="https://img.shields.io/npm/v/eslint-config-supercharge.svg" alt="Version"></a> <a href="https://www.npmjs.com/package/supercharge"><img src="https://img.shields.io/npm/l/supercharge.svg" alt="License"></a>
+
 </div>
 
 ## About
@@ -13,7 +14,7 @@
 
 **Typescript** - is another excellent tool that could be helpful in our daily work - this one is bringing to us static typings.
 
-The only disadvantage of them is that they are not very easy to configure, especially if you want to connect them with React or some other framework. This project tries to solve this problem. 
+The only disadvantage of them is that they are not very easy to configure, especially if you want to connect them with React or some other framework. This project tries to solve this problem.
 
 ## Table of Contents
 
@@ -21,8 +22,8 @@ The only disadvantage of them is that they are not very easy to configure, espec
 2. [Setting up a basic project](#setting-up-a-basic-project)
 3. [Setting up a React project](#setting-up-a-react-project)
 4. [Setting up a Node project](#setting-up-a-node-project)
-4. [Setting up a project with Node and React](#setting-up-a-project-with-node-and-react)
-5. [What's inside](#whats-inside)
+5. [Setting up a project with Node and React](#setting-up-a-project-with-node-and-react)
+6. [What's inside](#whats-inside)
 
 ## Install
 
@@ -58,16 +59,21 @@ your-project
 To enable eslint - you will need proper **.eslintrc**, for typescript - **tsconfig.json** and for prettier - **.prettierrc**
 
 **.eslintrc**
+
 ```
 { "extends": "supercharge", "root": true }
 ```
+
 **.tsconfig.json**
+
 ```
 {  "extends": "eslint-config-supercharge/tsconfig.json" }
 ```
+
 **.prettierrc**
+
 ```
-{  "prettier": "eslint-config-supercharge/prettier"  }
+"eslint-config-supercharge/prettier"
 ```
 
 Our example project should look like this:
@@ -109,15 +115,18 @@ your-project
 ```
 
 **.eslintrc**
+
 ```
 { "extends": "supercharge/react", "root": true }
 ```
+
 **.tsconfig.json**
+
 ```
 {  "extends": "eslint-config-supercharge/react/tsconfig.json" }
 ```
 
-First we are going to put additional **.tsconfig.json** and **.eslintrc** files inside src folder, also with **"root": true** property - this is crucial. 
+First we are going to put additional **.tsconfig.json** and **.eslintrc** files inside src folder, also with **"root": true** property - this is crucial.
 
 This way we change eslint/typescript behavior only for **src** files. Top-level files like config.js (i.e. webpack.config.js) will not report any problems related to React rules.
 
@@ -144,22 +153,24 @@ your-project
 ```
 
 **.eslintrc**
+
 ```
 { "extends": "supercharge/node", "root": true }
 ```
+
 **.tsconfig.json**
+
 ```
 {  "extends": "eslint-config-supercharge/node/tsconfig.json" }
 ```
 
-First we are going to put additional **.tsconfig.json** and **.eslintrc** files inside src folder, also with **"root": true** property - this is crucial. 
+First we are going to put additional **.tsconfig.json** and **.eslintrc** files inside src folder, also with **"root": true** property - this is crucial.
 
 This way we change eslint/typescript behavior only for **src** files. Top-level files like config.js (i.e. webpack.config.js) will not report any problems related to Node rules.
 
-
 ## Setting up a project with Node and React
 
-Looking at React and Node examples, we can try to mix them up in project which contain both React and Node code. 
+Looking at React and Node examples, we can try to mix them up in project which contain both React and Node code.
 
 Example project structure based on Basic project:
 
@@ -186,19 +197,25 @@ your-project
 ```
 
 **.eslintrc**
+
 ```
 { "extends": "supercharge/node", "root": true }
 ```
+
 **.tsconfig.json**
+
 ```
 {  "extends": "eslint-config-supercharge/node/tsconfig.json" }
 ```
 
 **.eslintrc**
+
 ```
 { "extends": "supercharge/react", "root": true }
 ```
+
 **.tsconfig.json**
+
 ```
 {  "extends": "eslint-config-supercharge/react/tsconfig.json" }
 ```
@@ -207,7 +224,7 @@ Simple as that.
 
 ## Explanations
 
-- **"root": true** -  makes you sure that the only config you are using is defined in that file.
+- **"root": true** - makes you sure that the only config you are using is defined in that file.
 
 ## What's inside
 

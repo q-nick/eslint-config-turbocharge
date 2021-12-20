@@ -92,6 +92,8 @@ const crossPlatformTSRules = Object.assign(
       'error',
       { allowAliases: 'in-unions' },
     ],
+    // we dont need that - TS will cover this
+    'node/no-unsupported-features/es-syntax': 'off',
   },
   tsHeavyRulesOff,
 );
