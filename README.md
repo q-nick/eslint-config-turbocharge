@@ -1,8 +1,8 @@
 <div align="center">
-  <h1>ESLint Config Supercharge</h1>
+  <h1>ESLint Config Turbocharge</h1>
   <p>The purpose of this config is to keep extremely easy to use <b>ESLint</b>, <b>Typescript</b>, and <b>Prettier</b> in any project.</p>
 
-<a href="https://www.npmjs.com/package/eslint-config-supercharge"><img src="https://img.shields.io/npm/dm/eslint-config-supercharge.svg" alt="Downloads"></a> <a href="https://www.npmjs.com/package/eslint-config-supercharge"><img src="https://img.shields.io/npm/v/eslint-config-supercharge.svg" alt="Version"></a> <a href="https://www.npmjs.com/package/supercharge"><img src="https://img.shields.io/npm/l/supercharge.svg" alt="License"></a>
+<a href="https://www.npmjs.com/package/eslint-config-turbocharge"><img src="https://img.shields.io/npm/dm/eslint-config-turbocharge.svg" alt="Downloads"></a> <a href="https://www.npmjs.com/package/eslint-config-turbocharge"><img src="https://img.shields.io/npm/v/eslint-config-turbocharge.svg" alt="Version"></a> <a href="https://www.npmjs.com/package/turbocharge"><img src="https://img.shields.io/npm/l/turbocharge.svg" alt="License"></a>
 
 </div>
 
@@ -31,7 +31,7 @@ The first thing you have to do is to **remove all eslint dependencies** (includi
 Now, you can install this package:
 
 ```
-npm i --save-dev eslint-config-supercharge
+npm i --save-dev eslint-config-turbocharge
 ```
 
 ## Configuration
@@ -44,7 +44,7 @@ This config contains a few presets for different kinds of projects:
 
 ## Setting up a basic project
 
-Let's say that you have a project structure like this and already installed _eslint-config-supercharger_:
+Let's say that you have a project structure like this and already installed _eslint-config-turbocharge_:
 
 ```
 your-project
@@ -61,19 +61,19 @@ To enable eslint - you will need proper **.eslintrc**, for typescript - **tsconf
 **.eslintrc**
 
 ```
-{ "extends": "supercharge", "root": true }
+{ "extends": "turbocharge", "root": true }
 ```
 
 **.tsconfig.json**
 
 ```
-{  "extends": "eslint-config-supercharge/node/tsconfig.json" }
+{  "extends": "eslint-config-turbocharge/node/tsconfig.json" }
 ```
 
 **.prettierrc**
 
 ```
-"eslint-config-supercharge/prettier"
+"eslint-config-turbocharge/prettier"
 ```
 
 Our example project should look like this:
@@ -115,13 +115,13 @@ your-project
 **.eslintrc**
 
 ```
-{ "extends": "supercharge/react", "root": true }
+{ "extends": "turbocharge/react", "root": true }
 ```
 
 **.tsconfig.json**
 
 ```
-{  "extends": "eslint-config-supercharge/react/tsconfig.json" }
+{  "extends": "eslint-config-turbocharge/react/tsconfig.json" }
 ```
 
 First we are going to put additional **.tsconfig.json** and **.eslintrc** files inside src folder, also with **"root": true** property - this is crucial.
@@ -151,13 +151,13 @@ your-project
 **.eslintrc**
 
 ```
-{ "extends": "supercharge/node", "root": true }
+{ "extends": "turbocharge/node", "root": true }
 ```
 
 **.tsconfig.json**
 
 ```
-{  "extends": "eslint-config-supercharge/node/tsconfig.json" }
+{  "extends": "eslint-config-turbocharge/node/tsconfig.json" }
 ```
 
 First we are going to put additional **.tsconfig.json** and **.eslintrc** files inside src folder, also with **"root": true** property - this is crucial.
@@ -195,25 +195,25 @@ your-project
 **.eslintrc**
 
 ```
-{ "extends": "supercharge/node", "root": true }
+{ "extends": "turbocharge/node", "root": true }
 ```
 
 **.tsconfig.json**
 
 ```
-{  "extends": "eslint-config-supercharge/node/tsconfig.json" }
+{  "extends": "eslint-config-turbocharge/node/tsconfig.json" }
 ```
 
 **.eslintrc**
 
 ```
-{ "extends": "supercharge/react", "root": true }
+{ "extends": "turbocharge/react", "root": true }
 ```
 
 **.tsconfig.json**
 
 ```
-{  "extends": "eslint-config-supercharge/react/tsconfig.json" }
+{  "extends": "eslint-config-turbocharge/react/tsconfig.json" }
 ```
 
 Simple as that.
