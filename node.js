@@ -10,7 +10,7 @@ const nodeRules = {
   'node/no-missing-import': [
     'error',
     {
-      tryExtensions: ['.ts', '.d.ts', '.json', '.node'],
+      tryExtensions: ['.ts', '.d.ts', '.js', '.json', '.node'],
     },
   ],
   // typescript
