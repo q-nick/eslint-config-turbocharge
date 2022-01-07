@@ -1,7 +1,7 @@
 {
-  "name": "eslint-config-supercharge",
+  "name": "eslint-config-turbocharge",
   "version": "0.1.3",
-  "description": "Supercharge Eslint Config",
+  "description": "turbocharge Eslint Config",
   "main": "index.json",
   "scripts": {
     "test:react": "eslint react",
@@ -9,13 +9,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/q-nick/eslint-config-supercharge.git"
+    "url": "git+https://github.com/q-nick/eslint-config-turbocharge.git"
   },
   "keywords": [
     "eslint",
     "eslintconfig",
     "typescript",
-    "supercharge",
+    "turbocharge",
     "linter",
     "code",
     "prettier",
@@ -24,9 +24,9 @@
   "author": "Paweł Stefański",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/q-nick/eslint-config-supercharge/issues"
+    "url": "https://github.com/q-nick/eslint-config-turbocharge/issues"
   },
-  "homepage": "https://github.com/q-nick/eslint-config-supercharge#readme",
+  "homepage": "https://github.com/q-nick/eslint-config-turbocharge#readme",
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.2.0",
     "@typescript-eslint/parser": "^5.2.0",
