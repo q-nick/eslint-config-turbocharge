@@ -1,7 +1,7 @@
 const rules = require('./cross-platform-rules');
 
 const reactRules = {
-  //warn
+  // warn
   'react/forbid-component-props': 'warn',
   'react/jsx-no-bind': 'warn',
 
@@ -113,15 +113,23 @@ module.exports = {
     },
   ],
   settings: {
-    'import/extensions': ['.ts', '.d.ts', '.tsx'],
+    'import/extensions': ['.ts', '.tsx'],
     'import/external-module-folders': ['node_modules', 'node_modules/@types'],
     'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.d.ts', '.tsx'],
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
     },
     'import/resolver': {
       node: {
-        extensions: ['.ts', '.d.ts', '.tsx'],
+        extensions: ['.ts', '.tsx'],
       },
     },
   },
+  overrides: [
+    {
+      files: ['*test*', '*spec*'],
+      rules: {
+        'node/no-unpublished-import': 'off',
+      },
+    },
+  ],
 };

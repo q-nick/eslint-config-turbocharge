@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-turbocharge",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Turbocharge Eslint Config",
   "main": "index.json",
   "scripts": {
