@@ -4,13 +4,13 @@ const nodeRules = {
   // 'node/no-unpublished-import': [
   //   'error',
   //   {
-  //     tryExtensions: ['.ts', '.d.ts'],
+  //     tryExtensions: ['.ts'],
   //   },
   // ],
   'node/no-missing-import': [
     'error',
     {
-      tryExtensions: ['.ts', '.d.ts', '.js', '.json', '.node'],
+      tryExtensions: ['.ts', '.js', '.json', '.node'],
     },
   ],
   // typescript
@@ -48,12 +48,20 @@ module.exports = {
     'import/extensions': ['.ts', '.d.ts'],
     'import/external-module-folders': ['node_modules', 'node_modules/@types'],
     'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.d.ts'],
+      '@typescript-eslint/parser': ['.ts'],
     },
     'import/resolver': {
       node: {
-        extensions: ['.ts', '.d.ts'],
+        extensions: ['.ts', '.js'],
       },
     },
   },
+  overrides: [
+    {
+      files: ['*test*', '*spec*'],
+      rules: {
+        'node/no-unpublished-import': 'off',
+      },
+    },
+  ],
 };

@@ -18,6 +18,7 @@ const importRules = Object.assign({}, importRulesAllOn, {
   'import/no-import-module-exports': 'off',
   'import/group-exports': 'off',
   'import/exports-last': 'off',
+  'import/dynamic-import-chunkname': 'off',
 
   'import/max-dependencies': [
     'error',
@@ -112,6 +113,7 @@ const crossPlatformJSRules = Object.assign(
     'require-unicode-regexp': 'off',
     'sort-keys': 'off',
     'no-negated-condition': 'off',
+    'no-undef-init': 'off',
 
     // enable warnings for some rules
     'no-magic-numbers': 'warn',
@@ -132,6 +134,7 @@ const crossPlatformJSRules = Object.assign(
     // comments
     'capitalized-comments': 'off',
     'no-warning-comments': 'off',
+    'multiline-comment-style': ['error', 'separate-lines'],
 
     // unicorn
     'unicorn/filename-case': [
