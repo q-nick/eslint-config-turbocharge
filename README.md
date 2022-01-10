@@ -140,7 +140,6 @@ your-project
 ├── .tsconfig.json
 ├── config.js
 ├── src
-│ ├── .tsconfig.json     <== new
 │ ├── .eslintrc          <== new
 │ ├── service.ts
 │ ├── server.ts
@@ -154,15 +153,9 @@ your-project
 { "extends": "turbocharge/node", "root": true }
 ```
 
-**.tsconfig.json**
+We just need to put **.eslintrc** file inside src folder, with **"root": true** property - this is crucial.
 
-```
-{  "extends": "eslint-config-turbocharge/node/tsconfig.json" }
-```
-
-First we are going to put additional **.tsconfig.json** and **.eslintrc** files inside src folder, also with **"root": true** property - this is crucial.
-
-This way we change eslint/typescript behavior only for **src** files. Top-level files like config.js (i.e. webpack.config.js) will not report any problems related to Node rules.
+This way we change eslint behavior only for **src** files. Top-level files like config.js (i.e. webpack.config.js) will not report any problems related to Node rules.
 
 ## Setting up a project with Node and React
 
@@ -178,7 +171,6 @@ your-project
 ├── .tsconfig.json
 ├── config.js
 ├── src-backend
-│ ├── .tsconfig.json     <==
 │ ├── .eslintrc          <==
 │ ├── service.ts
 │ ├── server.ts
@@ -196,12 +188,6 @@ your-project
 
 ```
 { "extends": "turbocharge/node", "root": true }
-```
-
-**.tsconfig.json**
-
-```
-{  "extends": "eslint-config-turbocharge/node/tsconfig.json" }
 ```
 
 **.eslintrc**
