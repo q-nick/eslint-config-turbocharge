@@ -2,7 +2,7 @@
   <h1>ESLint Config Turbocharge</h1>
   <p>The purpose of this config is to keep extremely easy to use <b>ESLint</b>, <b>Typescript</b>, and <b>Prettier</b> in any project.</p>
 
-<a href="https://www.npmjs.com/package/eslint-config-turbocharge"><img src="https://img.shields.io/npm/dm/eslint-config-turbocharge.svg" alt="Downloads"></a> <a href="https://www.npmjs.com/package/eslint-config-turbocharge"><img src="https://img.shields.io/npm/v/eslint-config-turbocharge.svg" alt="Version"></a> <a href="https://www.npmjs.com/package/turbocharge"><img src="https://img.shields.io/npm/l/turbocharge.svg" alt="License"></a>
+<a href="https://www.npmjs.com/package/eslint-config-turbocharge"><img src="https://img.shields.io/npm/dm/eslint-config-turbocharge.svg" alt="Downloads"></a> <a href="https://www.npmjs.com/package/eslint-config-turbocharge"><img src="https://img.shields.io/npm/v/eslint-config-turbocharge.svg" alt="Version"></a> <a href="https://www.npmjs.com/package/eslint-config-turbocharge"><img src="https://img.shields.io/npm/l/eslint-config-turbocharge.svg" alt="License"></a>
 
 </div>
 
