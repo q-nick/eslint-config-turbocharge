@@ -1,6 +1,7 @@
 const rules = require('./cross-platform-rules');
-const nodeRules = require('./node');
+const backendRules = require('./backend');
 
+/** @type { import("@types/eslint").Linter.BaseConfig } */
 module.exports = {
   env: {
     node: true,
@@ -13,13 +14,15 @@ module.exports = {
     'prettier',
   ],
   parserOptions: {
+    ecmaVersion: 2018,
     sourceType: 'module',
   },
-  rules: Object.assign({}, rules.crossPlatformJSRules, {
+  rules: {
+    ...rules.crossPlatformJSRules,
     'import/no-nodejs-modules': 'off',
     'import/unambiguous': 'off',
     'import/no-commonjs': 'off',
     'unicorn/numeric-separators-style': 'off',
-  }),
-  overrides: [Object.assign({ files: ['*.ts'] }, nodeRules)],
+  },
+  overrides: [{ files: ['*.ts'], ...backendRules }],
 };

@@ -21,6 +21,7 @@ const nodeRules = {
   // 'import/unambiguous': 'off',
 };
 
+/** @type { import("@types/eslint").Linter.BaseConfig } */
 module.exports = {
   env: {
     node: true,
@@ -43,7 +44,7 @@ module.exports = {
   parserOptions: {
     sourceType: 'module',
   },
-  rules: Object.assign({}, rules.crossPlatformRules, nodeRules),
+  rules: { ...rules.crossPlatformRules, ...nodeRules },
   settings: {
     'import/extensions': ['.ts', '.d.ts'],
     'import/external-module-folders': ['node_modules', 'node_modules/@types'],
