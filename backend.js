@@ -1,26 +1,16 @@
 const rules = require('./cross-platform-rules');
 
-const nodeRules = {
-  // 'node/no-unpublished-import': [
-  //   'error',
-  //   {
-  //     tryExtensions: ['.ts'],
-  //   },
-  // ],
+const backendRules = {
   'node/no-missing-import': [
     'error',
     {
       tryExtensions: ['.ts', '.js', '.json', '.node'],
     },
   ],
-  // typescript
-  // '@typescript-eslint/naming-convention': 'off',
-  // '@typescript-eslint/no-magic-numbers': 'off',
-  // import
   'import/no-nodejs-modules': 'off',
-  // 'import/unambiguous': 'off',
 };
 
+/** @type { import("@types/eslint").Linter.BaseConfig } */
 module.exports = {
   env: {
     node: true,
@@ -43,7 +33,7 @@ module.exports = {
   parserOptions: {
     sourceType: 'module',
   },
-  rules: Object.assign({}, rules.crossPlatformRules, nodeRules),
+  rules: { ...rules.crossPlatformRules, ...backendRules },
   settings: {
     'import/extensions': ['.ts', '.d.ts'],
     'import/external-module-folders': ['node_modules', 'node_modules/@types'],

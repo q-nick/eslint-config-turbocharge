@@ -1,0 +1,6 @@
+default:
+  paths: ['./tests/**/*.feature', './tests/*.feature']
+  requireModule: ['@swc-node/register']
+  require: ['./tests/**/*.steps.ts', './tests/*.steps.ts']
+  publishQuiet: true
+  format: ['progress-bar']

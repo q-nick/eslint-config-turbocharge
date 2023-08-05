@@ -1,2 +1,6 @@
+.github
 .vscode
 .editorconfig
+tests
+.prettierrc
+cucumber.yml
