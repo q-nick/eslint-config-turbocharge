@@ -68,6 +68,7 @@ const reactRules = {
   ],
 };
 
+/** @type { import("@types/eslint").Linter.BaseConfig } */
 module.exports = {
   env: {
     browser: true,
@@ -101,10 +102,11 @@ module.exports = {
       jsx: true,
     },
   },
-  rules: Object.assign({}, rules.crossPlatformRules, reactRules),
+  rules: { ...rules.crossPlatformRules, ...reactRules },
   overrides: [
     {
-      files: ['*stories*', '*story*'], // storybook default export exception
+      // storybook default export exception
+      files: ['*stories*', '*story*'],
       rules: {
         'import/no-default-export': 'off',
         'import/no-anonymous-default-export': 'off',

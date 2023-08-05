@@ -1,8 +1,10 @@
-import { DataTable, Then, When, setWorldConstructor } from '@cucumber/cucumber';
-import { ESLint } from 'eslint';
-import { TestWorld } from './TestWorld';
+import type { DataTable } from '@cucumber/cucumber';
+import { setWorldConstructor, Then, When } from '@cucumber/cucumber';
 import assert from 'assert';
+import { ESLint } from 'eslint';
+
 import config from '../index';
+import { TestWorld } from './TestWorld';
 
 setWorldConstructor(TestWorld);
 
@@ -33,7 +35,7 @@ Then('Should have errors', async function (this: TestWorld, data: DataTable) {
 
   console.log(errors);
 
-  expectedErrors.forEach((expectedError, index) => {
+  for (const [index, expectedError] of expectedErrors.entries()) {
     const error = errors[index];
     assert.ok(error, `Error index: ${index} not found`);
 
@@ -42,7 +44,7 @@ Then('Should have errors', async function (this: TestWorld, data: DataTable) {
       expectedError,
       `${errors[index]} in row ${index}`,
     );
-  });
+  }
 
   assert.strictEqual(
     errors.length,

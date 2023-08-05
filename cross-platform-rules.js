@@ -1,4 +1,8 @@
 const { rules: eslintPluginImportRules } = require('eslint-plugin-import');
+// eslint-disable-next-line node/no-missing-require
+const {
+  configs: eslintPluginTypescriptConfigs,
+} = require('@typescript-eslint/eslint-plugin');
 
 // this will enable all rules
 const importRulesAllOn = Object.fromEntries(
@@ -38,46 +42,6 @@ const importRules = {
   'simple-import-sort/exports': 'error',
 };
 
-const tsHeavyRulesOff = {
-  '@typescript-eslint/unbound-method': 'off',
-  '@typescript-eslint/no-unsafe-assignment': 'off',
-  '@typescript-eslint/no-unsafe-argument': 'off',
-  '@typescript-eslint/promise-function-async': 'off',
-  '@typescript-eslint/no-confusing-void-expression': 'off',
-  '@typescript-eslint/no-unsafe-return': 'off',
-  '@typescript-eslint/await-thenable': 'off',
-  '@typescript-eslint/consistent-type-exports': 'off',
-  '@typescript-eslint/dot-notation': 'off',
-  '@typescript-eslint/no-base-to-string': 'off',
-  '@typescript-eslint/no-floating-promises': 'off',
-  '@typescript-eslint/no-implied-eval': 'off',
-  '@typescript-eslint/no-meaningless-void-operator': 'off',
-  '@typescript-eslint/no-misused-promises': 'off',
-  '@typescript-eslint/no-throw-literal': 'off',
-  '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'off',
-  '@typescript-eslint/no-unnecessary-condition': 'off',
-  '@typescript-eslint/no-unnecessary-qualifier': 'off',
-  '@typescript-eslint/no-unnecessary-type-arguments': 'off',
-  '@typescript-eslint/no-unnecessary-type-assertion': 'off',
-  '@typescript-eslint/no-unsafe-call': 'off',
-  '@typescript-eslint/no-unsafe-member-access': 'off',
-  '@typescript-eslint/non-nullable-type-assertion-style': 'off',
-  '@typescript-eslint/prefer-includes': 'off',
-  '@typescript-eslint/prefer-nullish-coalescing': 'off',
-  '@typescript-eslint/prefer-readonly': 'off',
-  '@typescript-eslint/prefer-reduce-type-parameter': 'off',
-  '@typescript-eslint/prefer-regexp-exec': 'off',
-  '@typescript-eslint/prefer-return-this-type': 'off',
-  '@typescript-eslint/prefer-string-starts-ends-with': 'off',
-  '@typescript-eslint/require-array-sort-compare': 'off',
-  '@typescript-eslint/require-await': 'off',
-  '@typescript-eslint/restrict-plus-operands': 'off',
-  '@typescript-eslint/restrict-template-expressions': 'off',
-  '@typescript-eslint/return-await': 'off',
-  '@typescript-eslint/strict-boolean-expressions': 'off',
-  '@typescript-eslint/switch-exhaustiveness-check': 'off',
-};
-
 const crossPlatformTSRules = {
   'no-magic-numbers': 'off',
   '@typescript-eslint/no-magic-numbers': [
@@ -92,7 +56,7 @@ const crossPlatformTSRules = {
   '@typescript-eslint/no-type-alias': ['error', { allowAliases: 'in-unions' }],
   // we dont need that - TS will cover this
   'node/no-unsupported-features/es-syntax': 'off',
-  ...tsHeavyRulesOff,
+  ...eslintPluginTypescriptConfigs['disable-type-checked'].rules,
 };
 
 const crossPlatformJSRules = {
@@ -147,7 +111,7 @@ const crossPlatformJSRules = {
   ...importRules,
 };
 
-const crossPlatformRules = {
+const crossPlatformJSTSRules = {
   ...crossPlatformJSRules,
   ...crossPlatformTSRules,
 };
@@ -155,5 +119,5 @@ const crossPlatformRules = {
 module.exports = {
   crossPlatformTSRules,
   crossPlatformJSRules,
-  crossPlatformRules,
+  crossPlatformJSTSRules,
 };

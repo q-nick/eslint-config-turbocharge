@@ -5,6 +5,7 @@
   "main": "index.json",
   "scripts": {
     "test": "cucumber-js",
+    "lint": "eslint . --ignore-path=.gitignore",
     "test:react": "eslint react",
     "test:nodejs": "eslint nodejs"
   },
