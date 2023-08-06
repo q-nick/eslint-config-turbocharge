@@ -43,6 +43,8 @@ const importRules = {
 };
 
 const crossPlatformTSRules = {
+  '@typescript-eslint/explicit-function-return-type': 'off',
+  '@typescript-eslint/explicit-module-boundary-types': 'off',
   'no-magic-numbers': 'off',
   '@typescript-eslint/no-magic-numbers': [
     'warn',
@@ -108,6 +110,7 @@ const crossPlatformJSRules = {
   'unicorn/prefer-module': 'off',
   'unicorn/prefer-node-protocol': 'off',
   'unicorn/no-useless-undefined': 'off',
+  'func-names': 'off',
   ...importRules,
 };
 

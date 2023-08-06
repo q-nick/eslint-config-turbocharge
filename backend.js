@@ -33,7 +33,7 @@ module.exports = {
   parserOptions: {
     sourceType: 'module',
   },
-  rules: { ...rules.crossPlatformRules, ...backendRules },
+  rules: { ...rules.crossPlatformJSTSRules, ...backendRules },
   settings: {
     'import/extensions': ['.ts', '.d.ts'],
     'import/external-module-folders': ['node_modules', 'node_modules/@types'],
