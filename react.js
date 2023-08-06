@@ -102,7 +102,7 @@ module.exports = {
       jsx: true,
     },
   },
-  rules: { ...rules.crossPlatformRules, ...reactRules },
+  rules: { ...rules.crossPlatformJSTSRules, ...reactRules },
   overrides: [
     {
       // storybook default export exception
